@@ -1,6 +1,6 @@
 # BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.40.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.40.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
 ![PWA Ready](https://img.shields.io/badge/PWA-Offline%20Ready-purple.svg)
@@ -16,7 +16,7 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 ### 🛡️ Secure & Client-Side
 - **Local Processing**: Uses the HTML5 FileReader API to parse files directly on your machine.
 - **Privacy First**: No save data is ever uploaded to a server.
-- **Offline Capable**: **UPDATED!** Install the app as a PWA. Go to **Settings > Offline Data** to pre-download all 151 Pokemon sprites and cries for a completely offline experience.
+- **Offline Capable**: **UPDATED!** Install the app as a PWA. Go to **Settings > Offline Data** to pre-download all 151 Pokemon sprites (Original, Modern, and Artwork) and cries for a completely offline experience.
 
 ### 🎮 Comprehensive Save Management
 - **Universal Support**: Fully compatible with `.sav` and `.srm` files (32KB standard size).
