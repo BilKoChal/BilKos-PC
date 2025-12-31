@@ -1,6 +1,6 @@
 # BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.18.2-blue.svg)
+![Version](https://img.shields.io/badge/version-1.27.2-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
 
@@ -22,15 +22,17 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 - **Binary Export**: Saves changes back to a binary format that works on emulators and flash carts.
 
 ### 🛠️ Advanced Editing Tools
-- **Trainer Editor**: Modify your name, money, and view badges/playtime.
-- **Party Management**: View your active team with detailed stats.
-- **PC Storage**: Browse all 12 PC Boxes with visual sprites.
-- **Inventory & Item Editor**: Manage Bag and PC items. Select any item from a searchable list and adjust quantities.
-- **Pokedex Editor**: Manually toggle "Seen" and "Caught" flags for all 151 Pokemon.
+- **Trainer Editor**: Modify your name, money (capped at 999,999), and view badges/playtime.
+- **Party Management**: View your active team with detailed stats. Move Pokemon between Party and Boxes.
+- **PC Storage**: Browse all 12 PC Boxes with visual sprites. Fully supports moving and swapping Pokemon with improved precision and visual feedback.
+- **Inventory & Item Editor**: Manage Bag and PC items. Select any item from a searchable list with sorting (Name/ID) and adjust quantities.
+- **Pokedex Editor**: Manually toggle "Seen" and "Caught" flags for all 151 Pokemon. Hear Pokemon cries with the new audio feature!
 - **Trade Evolutions**: Evolve Kadabra, Haunter, Machoke, and Graveler instantly with a single button click (No trading cable required!).
+- **Evolution Animation**: Watch a retro-style animation when evolving your Pokemon!
 
 ### 📊 Deep Statistics & Visualization
 - **IVs & EVs**: View hidden Determination Values (DVs/IVs) and Stat Experience (EVs) for every Pokemon.
+- **OT Info**: View Original Trainer Name and ID for any Pokemon to verify legitimacy.
 - **Interactive Charts**: Toggle between Radar and Bar charts to visualize stat distribution.
 - **Modern UI**: A responsive interface built with Tailwind CSS, featuring version-specific themes (Red/Blue/Yellow).
 
@@ -59,6 +61,7 @@ This project follows a strict **modular architecture** to support future generat
 ├── components/       # Reusable UI components (TrainerCard, PokedexViewer, etc.)
 ├── core/             # Business Logic Layer
 │   ├── gen1/         # Gen 1 specific logic (Parser, Writer, Offsets)
+│   ├── move_manager.ts # Logic for moving Pokemon between containers
 │   ├── theme.ts      # Dynamic theming engine
 │   └── types.ts      # TypeScript interfaces
 ├── data/             # Static Data (Base Stats, Text Strings)
