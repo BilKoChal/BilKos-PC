@@ -1,6 +1,6 @@
 # BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.35.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.38.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
 
@@ -36,6 +36,7 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
     - **Smart Swap**: Select multiple Pokemon and click on an occupied slot to sequentially swap them.
     - **Capacity Checks**: Prevents you from moving more Pokemon than a Box or Party can hold.
 - **Toast Notifications**: Modern, non-intrusive alerts for feedback and errors.
+- **Settings & Customization**: **NEW!** Switch between Original Game Boy sprites, Modern pixel art, or Official Artwork via the settings menu.
 - **Trainer Editor**: Modify your name, money (capped at 999,999), and view badges/playtime.
 - **Level Editor**: Edit your Pokemon's level (1-100) with automatic stat recalculation.
 - **Move Editor**: Change your Pokemon's moveset by selecting from any Gen 1 move.
@@ -43,6 +44,8 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 - **PC Storage**: Browse all 12 PC Boxes with visual sprites. Fully supports moving and swapping Pokemon with improved precision and visual feedback.
 - **Inventory & Item Editor**: Manage Bag and PC items. Select any item from a searchable list with sorting (Name/ID) and adjust quantities.
 - **Pokedex Editor**: Manually toggle "Seen" and "Caught" flags for all 151 Pokemon. Hear Pokemon cries with the new audio feature!
+- **Location Guide**: View detailed "How to Obtain" information for every Pokemon, customized to your specific game version (Red, Blue, or Yellow).
+- **Authentic Lore**: Displays version-accurate Pokedex entries. Yellow version saves see unique descriptions compared to Red/Blue.
 - **Trade Evolutions**: Evolve Kadabra, Haunter, Machoke, and Graveler instantly with a single button click (No trading cable required!).
 - **Evolution Animation**: Watch a retro-style animation when evolving your Pokemon!
 
@@ -78,13 +81,14 @@ This project follows a strict **modular architecture** to support future generat
 ├── core/             # Business Logic Layer
 │   ├── parser.ts     # Main Parser Factory (Dispatcher)
 │   ├── version.ts    # Centralized Version Management
+│   ├── settings.tsx  # Global Settings Context
 │   ├── gen1/         # Gen 1 specific logic (Parser, Writer, Offsets, Constants)
 │   ├── move_manager.ts # Logic for moving Pokemon within a save (Single & Batch)
 │   ├── trade_manager.ts # Logic for moving Pokemon BETWEEN saves (Single & Batch)
 │   ├── toast.tsx     # Toast Notification System
 │   ├── theme.ts      # Dynamic theming engine
 │   └── types.ts      # TypeScript interfaces
-├── data/             # Static Data (Base Stats, Text Strings)
+├── data/             # Static Data (Base Stats, Text Strings, Pokedex Entries, Locations)
 ├── pages/            # Page Controllers
 └── App.tsx           # Main Entry Point
 ```
