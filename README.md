@@ -1,6 +1,6 @@
 # BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.27.2-blue.svg)
+![Version](https://img.shields.io/badge/version-1.28.2-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
 
@@ -60,6 +60,8 @@ This project follows a strict **modular architecture** to support future generat
 /src
 ├── components/       # Reusable UI components (TrainerCard, PokedexViewer, etc.)
 ├── core/             # Business Logic Layer
+│   ├── parser.ts     # Main Parser Factory (Dispatcher)
+│   ├── version.ts    # Centralized Version Management
 │   ├── gen1/         # Gen 1 specific logic (Parser, Writer, Offsets)
 │   ├── move_manager.ts # Logic for moving Pokemon between containers
 │   ├── theme.ts      # Dynamic theming engine
