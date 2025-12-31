@@ -1,8 +1,9 @@
 # BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.38.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.39.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
+![PWA Ready](https://img.shields.io/badge/PWA-Offline%20Ready-purple.svg)
 
 **BilKo's PC** is a state-of-the-art web-based save editor for the original Generation 1 Pokemon games (Red, Blue, and Yellow). Built with modern web technologies, it runs entirely in your browser, ensuring your save files never leave your device.
 
@@ -15,6 +16,7 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 ### 🛡️ Secure & Client-Side
 - **Local Processing**: Uses the HTML5 FileReader API to parse files directly on your machine.
 - **Privacy First**: No save data is ever uploaded to a server.
+- **Offline Capable**: **NEW!** Install the app as a PWA on your phone or desktop. Works completely offline with cached sprites and audio.
 
 ### 🎮 Comprehensive Save Management
 - **Universal Support**: Fully compatible with `.sav` and `.srm` files (32KB standard size).
@@ -36,7 +38,7 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
     - **Smart Swap**: Select multiple Pokemon and click on an occupied slot to sequentially swap them.
     - **Capacity Checks**: Prevents you from moving more Pokemon than a Box or Party can hold.
 - **Toast Notifications**: Modern, non-intrusive alerts for feedback and errors.
-- **Settings & Customization**: **NEW!** Switch between Original Game Boy sprites, Modern pixel art, or Official Artwork via the settings menu.
+- **Settings & Customization**: Switch between Original Game Boy sprites, Modern pixel art, or Official Artwork via the settings menu.
 - **Trainer Editor**: Modify your name, money (capped at 999,999), and view badges/playtime.
 - **Level Editor**: Edit your Pokemon's level (1-100) with automatic stat recalculation.
 - **Move Editor**: Change your Pokemon's moveset by selecting from any Gen 1 move.
@@ -69,6 +71,11 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 3. Edit your data (money, pokedex, evolutions, items, etc.).
 4. Click **Save Changes** in the top right to download your modified save file.
 
+### Installation (PWA)
+1. Open the site in Chrome or Safari.
+2. Click "Install" in the address bar (Chrome) or "Add to Home Screen" (Safari/Mobile).
+3. The app will now work offline and launch like a native application!
+
 ---
 
 ## 🧩 Technical Architecture
@@ -96,6 +103,7 @@ This project follows a strict **modular architecture** to support future generat
 **Tech Stack:**
 - **Frontend**: React 18, TypeScript, Vite
 - **Styling**: Tailwind CSS
+- **PWA**: Vite Plugin PWA, Workbox
 - **Visualization**: Recharts
 - **Icons**: Lucide React
 
