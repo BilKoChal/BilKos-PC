@@ -1,6 +1,6 @@
 # BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.15.2-blue.svg)
+![Version](https://img.shields.io/badge/version-1.18.2-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
 
@@ -25,7 +25,7 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 - **Trainer Editor**: Modify your name, money, and view badges/playtime.
 - **Party Management**: View your active team with detailed stats.
 - **PC Storage**: Browse all 12 PC Boxes with visual sprites.
-- **Inventory**: View items in your Bag and PC storage.
+- **Inventory & Item Editor**: Manage Bag and PC items. Select any item from a searchable list and adjust quantities.
 - **Pokedex Editor**: Manually toggle "Seen" and "Caught" flags for all 151 Pokemon.
 - **Trade Evolutions**: Evolve Kadabra, Haunter, Machoke, and Graveler instantly with a single button click (No trading cable required!).
 
@@ -45,7 +45,7 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 ### Usage
 1. Open the application.
 2. Drag and drop your `.sav` file into the upload zone.
-3. Edit your data (money, pokedex, evolutions, etc.).
+3. Edit your data (money, pokedex, evolutions, items, etc.).
 4. Click **Save Changes** in the top right to download your modified save file.
 
 ---
