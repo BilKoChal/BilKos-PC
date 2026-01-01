@@ -1,6 +1,6 @@
 # BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.50.5-blue.svg)
+![Version](https://img.shields.io/badge/version-1.57.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
 ![PWA Ready](https://img.shields.io/badge/PWA-Offline%20Ready-purple.svg)
@@ -20,8 +20,9 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 
 ### 🎮 Comprehensive Save Management
 - **Universal Support**: Fully compatible with `.sav` and `.srm` files (32KB standard size).
+- **Format Choices**: **NEW!** Export your save as either `.sav` (Standard) or `.srm` (RetroArch/Emulator) formats directly from the editor.
 - **Intelligent Version Detection**: Automatically identifies Red, Blue, or Yellow versions using heuristic analysis of the Pokedex and specialized memory flags.
-- **Binary Export**: Saves changes back to a binary format that works on emulators and flash carts.
+- **Fast Switching**: **NEW!** Quickly load a new save file directly from the editor without returning to the home screen.
 
 ### 🔄 Trade Center (Refactored)
 - **Modular Architecture**: The Trade Center features a highly modular codebase (`components/trade/`) with separate panels for Save Import, Bank, and Pk1 Files, ready for future Gen 2/3 expansions.
@@ -37,19 +38,28 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 - **Mobile Friendly**: Tabbed interface designed specifically for trading on mobile devices.
 
 ### 🛠️ Advanced Editing Tools
+- **Global Pokemon Search (NEW!)**: Instantly search for any Pokemon in your Party, PC Boxes, or the Event Database by Nickname, Species, or Dex ID. Clicking a result automatically navigates to it.
+- **Sort Boxes (NEW!)**: Automatically organize your PC Boxes.
+    - **Criteria**: Sort by Dex ID, Species Name, Nickname, Level, or Type.
+    - **Scope**: Sort a Single Box, All Boxes Individually, or perform a **Global Sort** to merge and refill all boxes sequentially.
+    - **Living Dex Mode**: **NEW!** One-click organization that sorts your boxes by Dex ID (1-151), keeping the highest level duplicates and moving others to overflow storage.
 - **Smart Move Mode**: 
     - **Power Selection**: Use **Ctrl+Click** to toggle selections and **Shift+Click** to select ranges of Pokemon.
-    - **Select All**: Quickly select all Pokemon in a Box with one click.
+    - **Select All**: Toggle between selecting all Pokemon in a Box or clearing the selection with one click.
     - **Smart Swap**: Select multiple Pokemon and click on an occupied slot to sequentially swap them.
+    - **Release**: **NEW!** Delete Pokemon instantly from the Info Viewer with a safety confirmation.
 - **Toast Notifications**: Modern, non-intrusive alerts for feedback and errors.
 - **Settings & Customization**: Switch between Original Game Boy sprites, Modern pixel art, or Official Artwork via the settings menu.
-- **Trainer Editor**: Modify your name, money (capped at 999,999), and view badges/playtime.
+- **Trainer Editor**: Modify your name, money (capped at 999,999), and view badges/playtime. **Fixed:** Improved layout to prevent text overlap.
 - **Level Editor**: Edit your Pokemon's level (1-100) with automatic stat recalculation.
 - **Move Editor**: Change your Pokemon's moveset by selecting from any Gen 1 move.
 - **Party Management**: View your active team with detailed stats. Move Pokemon between Party and Boxes. **NEW:** Displays Species Name under Nickname for clarity.
 - **PC Storage**: Browse all 12 PC Boxes with visual sprites. Fully supports moving and swapping Pokemon with improved precision and visual feedback.
+    - **Dual View Modes (NEW!)**: Toggle between standard Grid View and detailed List View.
+    - **Active Box Management (NEW!)**: Set which box is currently active in-game directly from the editor.
+    - **Quick Jump (NEW!)**: Navigate to any box instantly via dropdown.
 - **Inventory & Item Editor**: Manage Bag and PC items. Select any item from a searchable list with sorting (Name/ID) and adjust quantities.
-- **Pokedex Editor**: Manually toggle "Seen" and "Caught" flags for all 151 Pokemon. Hear Pokemon cries with the new audio feature!
+- **Pokedex Editor**: Manually toggle "Seen" and "Caught" flags for all 151 Pokemon. Hear Pokemon cries with the new audio feature! **NEW:** Now displays Pokemon Types.
 - **Location Guide**: View detailed "How to Obtain" information for every Pokemon, customized to your specific game version (Red, Blue, or Yellow).
 - **Authentic Lore**: Displays version-accurate Pokedex entries. Yellow version saves see unique descriptions compared to Red/Blue.
 - **Trade Evolutions**: Evolve Kadabra, Haunter, Machoke, and Graveler instantly with a single button click (No trading cable required!).
@@ -60,6 +70,7 @@ Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provid
 - **IVs & EVs**: View hidden Determination Values (DVs/IVs) and Stat Experience (EVs) for every Pokemon.
 - **OT Info**: View Original Trainer Name and ID for any Pokemon to verify legitimacy.
 - **Interactive Charts**: Toggle between Radar and Bar charts to visualize stat distribution.
+- **Status Visuals**: **NEW!** Status conditions (Sleep, Poison, etc.) are now clearly visible on Pokemon cards with custom icons and colors.
 - **Modern UI**: A responsive interface built with Tailwind CSS, featuring version-specific themes (Red/Blue/Yellow).
 
 ---
@@ -102,6 +113,7 @@ This project follows a strict **modular architecture** to support future generat
 │   ├── parser.ts     # Main Parser Factory (Dispatcher)
 │   ├── version.ts    # Centralized Version Management
 │   ├── bank.ts       # Bank Logic (Create, Import, Export)
+│   ├── sort_manager.ts # PC Box Sorting Logic (New!)
 │   ├── cache_manager.ts # Offline Asset Pre-fetcher logic
 │   ├── settings.tsx  # Global Settings Context
 │   ├── gen1/         # Gen 1 specific logic (Parser, Writer, Offsets, Constants)
@@ -113,7 +125,9 @@ This project follows a strict **modular architecture** to support future generat
 │   ├── theme.ts      # Dynamic theming engine
 │   └── types.ts      # TypeScript interfaces
 ├── data/             # Static Data (Base Stats, Text Strings, Pokedex Entries, Locations)
+│   ├── status.ts     # Status Condition Definitions (New!)
 │   ├── events.ts     # Event Distribution Data
+│   ├── pokemon_types.ts # Pokemon Types Database
 ├── pages/            # Page Controllers
 └── App.tsx           # Main Entry Point
 ```
