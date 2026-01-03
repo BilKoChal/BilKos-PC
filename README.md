@@ -1,154 +1,98 @@
-# BilKo's PC: Gen 1 Save Editor
 
-![Version](https://img.shields.io/badge/version-1.62.7-blue.svg)
+# BilKo's PC: Universal Pokémon Save Editor
+
+![Version](https://img.shields.io/badge/version-1.1.0_Alpha-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Gen 1 Compatible](https://img.shields.io/badge/Game-Pokemon%20Red%2FBlue%2FYellow-red.svg)
-![PWA Ready](https://img.shields.io/badge/PWA-Offline%20Ready-purple.svg)
+![PWA](https://img.shields.io/badge/PWA-Offline%20Ready-purple.svg)
 
-**BilKo's PC** is a state-of-the-art web-based save editor for the original Generation 1 Pokemon games (Red, Blue, and Yellow). Built with modern web technologies, it runs entirely in your browser, ensuring your save files never leave your device.
+**BilKo's PC** is a state-of-the-art, browser-based save file editor for retro Pokémon games. Built with modern web technologies, it runs entirely on your device, ensuring your save files never leave your computer.
 
-Curated by **BilKo(Ch)al** with advanced AI support, this project aims to provide the most intuitive and powerful editing experience for retro enthusiasts.
+---
+
+## 🌐 Live Versions
+
+| Version | Status | Link |
+| :--- | :--- | :--- |
+| **Stable Demo** | 🟢 Public Release | [Launch App](https://bilkochal.github.io/BilKos-PC/) |
+| **Alpha / Dev** | 🟡 Latest Features | [Launch Alpha](https://bilkochal.github.io/BilKos-PC/alpha/) |
+
+---
+
+## 🎮 Game Support Status
+
+| Generation | Versions | Status | Notes |
+| :--- | :--- | :--- | :--- |
+| **Gen 1** | Red, Blue, Yellow | ✅ **Full Support** | Complete editing & management. |
+| **Gen 2** | Gold, Silver, Crystal | ⚠️ **Beta** | Items, Party, & Box management operational. |
+| **Gen 3** | R, S, E, FR, LG | ⚠️ **Beta** | Parsing & Viewing implemented. |
+| **Gen 4** | D, P, Pt, HG, SS | 🚧 Read-Only | View-only mode. |
+| **Gen 5** | B, W, B2, W2 | 🚧 Read-Only | View-only mode. |
 
 ---
 
 ## 🌟 Key Features
 
-### 🛡️ Secure & Client-Side
-- **Local Processing**: Uses the HTML5 FileReader API to parse files directly on your machine.
-- **Privacy First**: No save data is ever uploaded to a server.
-- **Offline Capable**: **UPDATED!** Install the app as a PWA. Go to **Settings > Offline Data** to pre-download all 151 Pokemon sprites (Original, Modern, and Artwork) and cries for a completely offline experience.
+### 🛡️ Secure & Private
+- **Local Processing**: Uses HTML5 FileReader. No data is sent to any server.
+- **Offline Capable (PWA)**: Installable as a native app on iOS/Android/Desktop. Works without internet.
 
-### 🎮 Comprehensive Save Management
-- **Universal Support**: Fully compatible with `.sav` and `.srm` files (32KB standard size).
-- **Format Choices**: **NEW!** Export your save as either `.sav` (Standard) or `.srm` (RetroArch/Emulator) formats directly from the editor.
-- **Intelligent Version Detection**: Automatically identifies Red, Blue, or Yellow versions using heuristic analysis of the Pokedex and specialized memory flags.
-- **Fast Switching**: **NEW!** Quickly load a new save file directly from the editor without returning to the home screen.
+### 📦 Storage & Management
+- **Visual PC Storage**: View all boxes with sprites.
+- **Drag & Drop**: Seamlessly move Pokémon between Party and Boxes.
+- **Batch Operations**: Select multiple Pokémon (Ctrl/Shift+Click) to move or release them at once.
+- **BilKo Bank**: Create external storage files (`.bkbank`) to store up to 20 extra boxes outside your save file.
+- **Sorting**: Powerful algorithms to sort boxes by Dex ID, Level, Type, or organize a **Living Dex** instantly.
 
-### 🔄 Trade Center (Refactored)
-- **Modular Architecture**: The Trade Center features a highly modular codebase (`components/trade/`) with separate panels for Save Import, Bank, and Pk1 Files, ready for future Gen 2/3 expansions.
-- **Multi-Source Trading**: 
-    1. **File Trade**: Load a second `.sav` file to trade between your own saves. **NEW:** Export the modified secondary save file directly!
-    2. **BilKo Bank**: Create, Import, and Export personal Pokemon Banks (`.bkbank` format). Store up to 20 boxes of Pokemon externally!
-    3. **Import .pk1 (New!)**: Batch upload multiple `.pk1` files into a staging area. Transfer them one-way into your save file.
-    4. **Events & Specials (Updated!)**: Access official distributions and rare event Pokemon. **NEW:** Sort by ID/Name, colored tags, and "Direct Injection" button.
-- **Direct Injection**: Click "Add to Box" on an Event Pokemon to instantly add it to your current PC Box without needing to trade.
-- **Batch Import**: Select multiple Pokemon from a source and move them all at once to your game.
-- **Staging Area**: When importing .pk1 files, the grid hides empty slots and provides a dedicated "Import" button to append more files easily.
-- **Smart Pokedex**: Automatically updates your Pokedex (Seen & Caught) when you import a new species!
-- **Mobile Friendly**: Tabbed interface designed specifically for trading on mobile devices.
+### 🛠️ Editor Tools
+- **Trainer Card**: Edit Name, ID, Money, Coins, Badges, and Playtime.
+- **Pokémon Editor**:
+    - Edit Nickname, Level, and Experience.
+    - **Stats**: Edit IVs (DVs) and EVs (Stat Exp).
+    - **Moves**: Teach any move from the game generation.
+    - **Gen 2 Features**: Edit Held Items, Shiny status, and Unown Forms.
+- **Inventory**: Manage Bag, PC Items, Key Items, and TMs/HMs.
+- **Pokedex**: Toggle "Seen" and "Caught" flags with a visual interface.
 
-### 🛠️ Advanced Editing Tools
-- **Global Pokemon Search (NEW!)**: Instantly search for any Pokemon in your Party, PC Boxes, or the Event Database by Nickname, Species, or Dex ID. Clicking a result automatically navigates to it.
-- **Sort Boxes (NEW!)**: Automatically organize your PC Boxes.
-    - **Criteria**: Sort by Dex ID, Species Name, Nickname, Level, or Type.
-    - **Scope**: Sort a Single Box, All Boxes Individually, or perform a **Global Sort** to merge and refill all boxes sequentially.
-    - **Living Dex Mode**: **NEW!** One-click organization that sorts your boxes by Dex ID (1-151), keeping the highest level duplicates and moving others to overflow storage.
-- **Smart Move Mode**: 
-    - **Power Selection**: Use **Ctrl+Click** to toggle selections and **Shift+Click** to select ranges of Pokemon.
-    - **Select All**: Toggle between selecting all Pokemon in a Box or clearing the selection with one click.
-    - **Smart Swap**: Select multiple Pokemon and click on an occupied slot to sequentially swap them.
-    - **Release**: **NEW!** Delete Pokemon instantly from the Info Viewer with a safety confirmation.
-- **Toast Notifications**: Modern, non-intrusive alerts for feedback and errors.
-- **Settings & Customization**: Switch between Original Game Boy sprites, Modern pixel art, or Official Artwork via the settings menu.
-- **Trainer Editor**: Modify your name, money (capped at 999,999), and view badges/playtime. **Fixed:** Improved layout to prevent text overlap.
-- **Level Editor**: Edit your Pokemon's level (1-100) with automatic stat recalculation.
-- **Move Editor**: Change your Pokemon's moveset by selecting from any Gen 1 move.
-- **Party Management**: View your active team with detailed stats. Move Pokemon between Party and Boxes. **NEW:** Displays Species Name under Nickname for clarity.
-- **PC Storage**: Browse all 12 PC Boxes with visual sprites. Fully supports moving and swapping Pokemon with improved precision and visual feedback.
-    - **Dual View Modes (NEW!)**: Toggle between standard Grid View and detailed List View.
-    - **Active Box Management (NEW!)**: Set which box is currently active in-game directly from the editor.
-    - **Quick Jump (NEW!)**: Navigate to any box instantly via dropdown.
-- **Inventory & Item Editor**: Manage Bag and PC items. Select any item from a searchable list with sorting (Name/ID) and adjust quantities.
-- **Pokedex Editor**: Manually toggle "Seen" and "Caught" flags for all 151 Pokemon. Hear Pokemon cries with the new audio feature! **NEW:** Now displays Pokemon Types.
-- **Location Guide**: View detailed "How to Obtain" information for every Pokemon, customized to your specific game version (Red, Blue, or Yellow).
-- **Authentic Lore**: Displays version-accurate Pokedex entries. Yellow version saves see unique descriptions compared to Red/Blue.
-- **Trade Evolutions**: Evolve Kadabra, Haunter, Machoke, and Graveler instantly with a single button click (No trading cable required!).
-- **Evolution Animation**: Watch a retro-style animation when evolving your Pokemon!
-- **PK1 Export**: Export individual Pokemon as `.pk1` files directly from the Pokemon details screen. Supports standard **69-byte format** for full PKHeX compatibility.
+### 🔄 Trade Center
+- **Cross-Save Trading**: Load a second `.sav` file to trade Pokémon between files.
+- **Import/Export**:
+    - Export individual Pokémon as `.pk1` or `.pk2` files.
+    - Batch import Pokémon files into your save.
+- **Event Database**: Direct injection of historical Event Pokémon (Mew, Celebi, Surfing Pikachu, etc.) sourced from Project Pokémon.
 
-### 📊 Deep Statistics & Visualization
-- **IVs & EVs**: View hidden Determination Values (DVs/IVs) and Stat Experience (EVs) for every Pokemon.
-- **OT Info**: View Original Trainer Name and ID for any Pokemon to verify legitimacy.
-- **Interactive Charts**: Toggle between Radar and Bar charts to visualize stat distribution.
-- **Status Visuals**: **NEW!** Status conditions (Sleep, Poison, etc.) are now clearly visible on Pokemon cards with custom icons and colors.
-- **Modern UI**: A responsive interface built with Tailwind CSS, featuring version-specific themes (Red/Blue/Yellow).
+### 📚 Guides & Extras
+- **Battle Guide**: View Gym Leader and Elite Four teams tailored to your specific game version.
+- **Hall of Fame**: View your past victories in a cinematic interface.
+- **Asset Downloader**: Pre-download all sprites and audio cries for a complete offline experience.
 
 ---
 
-## 🚀 Getting Started
+## 🤝 Credits & Acknowledgements
 
-### Prerequisites
-- A web browser (Chrome, Firefox, Edge, Safari).
-- A valid save file (`.sav`) from Pokemon Red, Blue, or Yellow.
+This project was built standing on the shoulders of giants. Huge thanks to the following projects and communities:
 
-### Usage
-1. Open the application.
-2. Drag and drop your `.sav` file into the upload zone.
-3. Edit your data (money, pokedex, evolutions, items, etc.).
-4. Click **Save Changes** in the top right to download your modified save file.
+### **PKHeX**
+[https://github.com/kwsch/PKHeX](https://github.com/kwsch/PKHeX)
+> For providing the gold standard in save editing logic. The save parsing structure of this project learned immensely from PKHeX's source code.
 
-### Installation (PWA)
-1. Open the site in Chrome or Safari.
-2. Click "Install" in the address bar (Chrome) or "Add to Home Screen" (Safari/Mobile).
-3. Open **Settings (Gear Icon)**.
-4. Click **"Download Assets"** to cache all images/audio for offline use.
+### **PokeAPI**
+[https://pokeapi.co/](https://pokeapi.co/)
+> For providing an extensive database of Pokémon data and base assets.
 
----
+### **Pokémon Showdown**
+[https://play.pokemonshowdown.com/](https://play.pokemonshowdown.com/)
+> For the high-quality sprite assets used throughout the Trainer Cards and UI.
 
-## 🧩 Technical Architecture
+### **Project Pokémon**
+[https://projectpokemon.org/](https://projectpokemon.org/)
+> For archiving and preserving Event Pokémon data, which powers the "Event Database" feature.
 
-This project follows a strict **modular architecture** to support future generations and ensure maintainability.
-
-```
-/src
-├── components/       # Reusable UI components (TrainerCard, PokedexViewer, TradeCenter, Toast, etc.)
-│   ├── trade/        # Trade Center
-│   │   ├── headers/  # Dock Headers (File, Bank, Pkm)
-│   │   ├── panels/   # Selection Panels (File, Bank, Pkm, Event)
-│   │   ├── TradeDock.tsx
-│   │   ├── TradeSourceSelector.tsx
-│   │   ├── TradeActionControls.tsx
-│   │   └── TradeHeader.tsx
-├── core/             # Business Logic Layer
-│   ├── parser.ts     # Main Parser Factory (Dispatcher)
-│   ├── version.ts    # Centralized Version Management
-│   ├── bank.ts       # Bank Logic (Create, Import, Export)
-│   ├── sort_manager.ts # PC Box Sorting Logic (New!)
-│   ├── cache_manager.ts # Offline Asset Pre-fetcher logic
-│   ├── settings.tsx  # Global Settings Context
-│   ├── gen1/         # Gen 1 specific logic (Parser, Writer, Offsets, Constants)
-│   │   ├── pk1.ts    # .pk1 File Parser/Writer
-│   │   ├── utils.ts  # .pk1 Filename Generation & Hashing
-│   ├── move_manager.ts # Logic for moving Pokemon within a save (Single & Batch)
-│   ├── trade_manager.ts # Logic for moving Pokemon BETWEEN saves (Single & Batch)
-│   ├── toast.tsx     # Toast Notification System
-│   ├── theme.ts      # Dynamic theming engine
-│   └── types.ts      # TypeScript interfaces
-├── data/             # Static Data (Base Stats, Text Strings, Pokedex Entries, Locations)
-│   ├── status.ts     # Status Condition Definitions (New!)
-│   ├── events.ts     # Event Distribution Data
-│   ├── pokemon_types.ts # Pokemon Types Database
-├── pages/            # Page Controllers
-└── App.tsx           # Main Entry Point
-```
-
-**Tech Stack:**
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS
-- **PWA**: Vite Plugin PWA, Workbox
-- **Visualization**: Recharts
-- **Icons**: Lucide React
-
----
-
-## 🤝 Credits
-
-- **Curator & Lead**: BilKo(Ch)al
-- **Development Support**: Artificial Intelligence Assistant
-- **Assets**: Pokemon sprites and data provided by PokeAPI.
+### **PKVault**
+[https://github.com/Chnapy/PKVault](https://github.com/Chnapy/PKVault)
+> For inspiring several UI/UX concepts and features.
 
 ---
 
 <p align="center">
-  <sub>Created by BilKo(Ch)al with the help of AI • &copy; 2024</sub>
+  <sub>Created by BilKo(Ch)al • Open Source • Free to Use</sub>
 </p>
